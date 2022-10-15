@@ -19,10 +19,20 @@ void loop() {
     Serial.println("Ошибка считывания");
     return;
   }
+  if (h < 30) {
+   // то включается какаято херь
+  } else { 
+   return; // ничего не происходит
+  }
+  
   Serial.print("Влажность: ");
   Serial.print(h);
   Serial.print(" %\t");
   Serial.print("Температура: ");
   Serial.print(t);
   Serial.println(" *C "); //output screen
+
+ 
+ 
+
 }
