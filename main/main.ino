@@ -12,6 +12,7 @@ void setup() {
   dht.begin();
 }
 void loop() {
+  // Чтение данных
   delay(2000); //  задержки в MS
   float h = dht.readHumidity(); // влажность
   float t = dht.readTemperature(); // температурa
@@ -19,12 +20,14 @@ void loop() {
     Serial.println("Ошибка считывания");
     return;
   }
-  if (h < 30) {
+  // цикл провером 2000 MS
+  if (h < 30) { // Если Влажность (h) меньше 30%
    // то включается какаято херь
-  } else { 
-   return; // ничего не происходит
+  } else {  //иначе проверка повторяется
+   return; 
   }
   
+  // Вывод информации на дисплей
   Serial.print("Влажность: ");
   Serial.print(h);
   Serial.print(" %\t");
